@@ -56,15 +56,16 @@
         display: inline-block;
      }
      #card #avatar{
-        width: 30px;
-        
+        width: 50px;
      }
      #card #OnePiece{
         width: 300px;
         display: block;
         margin: 10px;
      }
-
+     #ExemploForm{
+        color: rgb(174, 0, 255);
+     }
 
     
  </style>
@@ -151,9 +152,6 @@ int main() {
 <h2>Anime Destaque</h2>
 <img  id="OnePiece"src="./imgs/OnePiece.jpg" alt="One Piece Imagem">
 <a href="https://www.google.com/imgres?q=One%20piece&imgurl=https%3A%2F%2Fimg.odcdn.com.br%2Fwp-content%2Fuploads%2F2021%2F09%2Fone-piece-1920x1080.jpg&imgrefurl=https%3A%2F%2Folhardigital.com.br%2F2021%2F09%2F02%2Fcinema-e-streaming%2Fone-piece-fim-manga-editor%2F&docid=nPnUG1M3drVsYM&tbnid=9o-uEo58zZAacM&vet=12ahUKEwihsYiH6_mSAxUnqJUCHYYSD3wQM3oECHwQAA..i&w=1920&h=1080&hcb=2&ved=2ahUKEwihsYiH6_mSAxUnqJUCHYYSD3wQM3oECHwQAA"><br>Link de referência da Imagem</a>
-
-
-
 
 <table> <!-- Cria tabelas -->
  
@@ -252,11 +250,90 @@ int main() {
    <h1>Container</h1>
     <div id = "card">
         
-        <img  id="avatar"src="./imgs/Zoro.jpg" alt="Zoro Imagem">
-        <h2>Dale</h2>
-        <img  id="OnePiece"src="./imgs/OnePiece.jpg" alt="One Piece Imagem">
-<!--<a href="https://www.google.com/imgres?q=One%20piece&imgurl=https%3A%2F%2Fimg.odcdn.com.br%2Fwp-content%2Fuploads%2F2021%2F09%2Fone-piece-1920x1080.jpg&imgrefurl=https%3A%2F%2Folhardigital.com.br%2F2021%2F09%2F02%2Fcinema-e-streaming%2Fone-piece-fim-manga-editor%2F&docid=nPnUG1M3drVsYM&tbnid=9o-uEo58zZAacM&vet=12ahUKEwihsYiH6_mSAxUnqJUCHYYSD3wQM3oECHwQAA..i&w=1920&h=1080&hcb=2&ved=2ahUKEwihsYiH6_mSAxUnqJUCHYYSD3wQM3oECHwQAA"><br>Link de referência da Imagem</a> -->
-        
+        <img  id="avatar"src="./imgs/cachorrinho.jpg" alt="Cachorro Imagem">
+        <h2>@CachorrinhoInvestiga</h2>
+        <p>Investigando essa Obra...</p>
+        <img  id="OnePiece"src="./imgs/OnePiece.jpg" alt="One Piece Imagem">    
+
     </div>
+    <br>
+    <br>
+    <hr>
+    <br>
+
+<h1>Exemplo de thead,tbody e tfoot</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Mês</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Janeiro</td>
+            <td>R$100</td>
+        </tr>
+        <tr>
+            <td>Fervereiro</td>
+            <td>R$200</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Total</td>
+            <td>R$300</td>
+        </tr>
+    </tfoot> 
+</table>
+
+<br>
+<hr>
+<br>
+<h2>Formulários e Inputs</h2>
+    <a href="https://www.w3schools.com/hTml/html_forms.asp">Formulários</a>
+    <br><br><hr>
+    <h2 id="ExemploForm">Exemplo</h2>
+    <form action="">
+    <label for="nome">Informe seu nome:</label><br>
+    <input id="nome"type="text"><br><br>
+
+    <label for="cor">Cor Favorita</label><br>
+    <input id="cor"type="color"><br><br>
+
+    <label for="data">Data Nascimento</label><br>
+    <input id="data"type="date"><br><br>
+
+    <label for="datetime">DateTime</label><br>
+    <input id="datetime" type="datetime"><br><br>
+
+    <label for="arquivo">Arquivo</label><br>
+    <input id="arquivo"type="file"><br><br>
+
+    <label for="cel">Telefone</label><br>
+    <input id="cel"type="number"><br><br>
+
+    <label for="adm">Administrador</label><br>
+    <input id="adm" type="checkbox" name = "" id=""><br><br>
+
+    <label for="">Sexo</label><br>
+    <label for="m">Masculino</label>
+    <input id="m" type="radio" name="" id="">
+    <label for="f">Feminino</label>
+    <input id="f" type="radio"><br><br>
+
+    <label for="invest">Interrese em Investigar</label><br>
+    <input id="invest" type="range"><br><br>
+
+    <input type="submit" value="Enviar">
+    </form>
+    <hr>
+
+    <form action="https://google.com/search" method="get">
+        <label for="chave">Informe o campo de busca</label>
+        <input type="text" name="q" id="chave"><br>
+        <input type="submit" value="Pesquisar">
+    </form>
+
 </body>
-</html>
+</html>s
