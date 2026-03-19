@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>HTTP</title>
+</head>
+<body>
+
+<h1>Protocolo HTTP</h1>
+
+<p>
+HTTP é o protocolo que permite a comunicação entre o navegador e o servidor.
+Quando você acessa um site, seu navegador faz um pedido (request)
+e o servidor responde (response).
+</p>
+
+<h2>Exemplo com formulário</h2>
+
+<form method="GET">
+    <label>Nome:</label><br>
+    <input type="text" name="nome"><br><br>
+
+    <label>Mensagem:</label><br>
+    <input type="text" name="mensagem"><br><br>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<p>Ao enviar, o navegador faz uma requisição HTTP.</p>
+
+<h2>Exemplo de Request</h2>
+<pre>
+GET /?nome=Ana&mensagem=Oi HTTP/1.1
+</pre>
+
+<h2>Exemplo de Response</h2>
+<pre>
+HTTP/1.1 200 OK
+</pre>
+<h2>Explicação dos campos</h2>
+
+<h3>Request:</h3>
+<ul>
+    <li><strong>GET:</strong> tipo de requisição</li>
+    <li><strong>URL:</strong> endereço solicitado</li>
+    <li><strong>Parâmetros:</strong> dados enviados (nome, mensagem)</li>
+</ul>
+
+<h3>Response:</h3>
+<ul>
+    <li><strong>Status 200:</strong> requisição deu certo</li>
+    <li><strong>Conteúdo:</strong> resposta do servidor (página HTML)</li>
+</ul>
+
+
+</body>
+</html>
