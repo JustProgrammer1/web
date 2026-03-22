@@ -1,57 +1,55 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>HTTP</title>
+    <title>Protocolo HTTP</title>
+    
 </head>
 <body>
 
-<h1>Protocolo HTTP</h1>
+    <h1>Protocolo HTTP</h1>
 
-<p>
-HTTP é o protocolo que permite a comunicação entre o navegador e o servidor.
-Quando você acessa um site, seu navegador faz um pedido (request)
-e o servidor responde (response).
-</p>
+    <p>
+        O HTTP (HyperText Transfer Protocol) é um protocolo utilizado na Web para a comunicação 
+        entre o navegador (cliente) e o servidor. Ele funciona através de requisições (requests) 
+        feitas pelo cliente e respostas (responses) enviadas pelo servidor.
+    </p>
 
-<h2>Exemplo com formulário</h2>
+    <img src="../imgs/RequestResponde.jpg" alt="Funcionamento do HTTP" width="400">
 
-<form method="GET">
-    <label>Nome:</label><br>
-    <input type="text" name="nome"><br><br>
+    <h2>Exemplo de requisição HTTP</h2>
+    <pre>
+GET /index.html HTTP/1.1
+Host: www.exemplo.com
+User-Agent: Mozilla/5.0
+Accept: text/html
+    </pre>
 
-    <label>Mensagem:</label><br>
-    <input type="text" name="mensagem"><br><br>
-
-    <button type="submit">Enviar</button>
-</form>
-
-<p>Ao enviar, o navegador faz uma requisição HTTP.</p>
-
-<h2>Exemplo de Request</h2>
-<pre>
-GET /?nome=Ana&mensagem=Oi HTTP/1.1
-</pre>
-
-<h2>Exemplo de Response</h2>
-<pre>
+    <h2>Exemplo de resposta HTTP</h2>
+    <pre>
 HTTP/1.1 200 OK
-</pre>
-<h2>Explicação dos campos</h2>
+Content-Type: text/html
+Content-Length: 1024
+    </pre>
 
-<h3>Request:</h3>
-<ul>
-    <li><strong>GET:</strong> tipo de requisição</li>
-    <li><strong>URL:</strong> endereço solicitado</li>
-    <li><strong>Parâmetros:</strong> dados enviados (nome, mensagem)</li>
-</ul>
+    <h2>Detalhes dos campos</h2>
 
-<h3>Response:</h3>
-<ul>
-    <li><strong>Status 200:</strong> requisição deu certo</li>
-    <li><strong>Conteúdo:</strong> resposta do servidor (página HTML)</li>
-</ul>
+    <h3>Request</h3>
+    <ul>
+        <li>GET: método da requisição</li>
+        <li>/index.html: recurso solicitado</li>
+        <li>HTTP/1.1: versão do protocolo</li>
+        <li>Host: endereço do servidor</li>
+        <li>User-Agent: navegador utilizado</li>
+        <li>Accept: tipo de conteúdo aceito</li>
+    </ul>
 
+    <h3>Response</h3>
+    <ul>
+        <li>200 OK: status da resposta</li>
+        <li>Content-Type: tipo do conteúdo</li>
+        <li>Content-Length: tamanho da resposta</li>
+    </ul>
 
 </body>
 </html>
