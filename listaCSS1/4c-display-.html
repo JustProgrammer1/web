@@ -26,11 +26,22 @@
         right: 0px;bottom: 0px;}
         #box4{background-color: burlywood;
         position: fixed;
-        left: 0px;bottom: 0px;}
+        left: 0px;bottom: 0px;animation: rotacao 5s linear 0s infinite;}
         #box5{background-color: wheat;
         position: fixed;top: 50%;left: 50%;
         transform:translate(-50%,-50%);
+        /*animation: name duration timing-function delay iteration-count direction fill-mode;*/
+        
         }
+
+        @keyframes rotacao {
+            0%{}
+
+            100%{transform: rotate(360deg);}
+        }
+
+
+
     </style>
 </head>
 <body>
