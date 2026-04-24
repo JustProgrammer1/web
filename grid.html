@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{display: grid;
+        grid-template-rows: 100px 150px 20vh;
+        grid-template-areas: "cabecario cabecario cabecario cabecario"
+                            "menusite menusite . principal" 
+                            "rodape rodape rodape rodape";
+    }
+    .box{border: 1px solid black;}
+    #box1{grid-area: cabecario;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: orange;
+        }
+    #box2{grid-area: menusite;
+        background-color: rgb(98, 179, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;}
+    #box3{grid-area: principal;
+        background-color: rgb(255, 70, 70);
+        display: flex;
+        justify-content: center;
+        align-items: center;}
+    #box4{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #box10{grid-area: rodape;
+        background-color: rgb(53, 211, 53);
+        display: flex;
+        justify-content: center;
+        align-items: center;}
+</style>
+<body>
+    <div class="container">
+        <div class="box" id="box1">Header</div>
+        <div class="box" id="box2">Main</div>
+        <div class="box" id="box3">Sidebar</div>
+        <div class="box" id="box4">empty</div>
+        <div class="box" id="box10">Footer</div>
+    </div>
+</body>
+</html>
