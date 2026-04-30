@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 2 - Estrutura e Sintaxe do CSS</title>
+    <style>
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.8;
+        }
+
+        h1 {
+            color: #58a6ff;
+            font-size: 1.6rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        h2 {
+            color: #58a6ff;
+            margin-top: 40px;
+        }
+        .caixa-exemplo {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            margin: 16px 0;
+        }
+
+        .lista-demo li:first-child {
+            color: #ffa657;
+            font-weight: bold;
+        }
+
+        .lista-demo li a {
+            color: #58a6ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .lista-demo li a:hover {
+            color: #ff7b72;
+            text-decoration: underline;
+        }
+
+        .tag-label {
+            font-size: 1rem;
+            color: #e6edf3;
+            position: relative;
+            display: inline-block;
+        }
+
+        .tag-label::before {
+            content: "[ ";
+            color: #3fb950;
+            font-weight: bold;
+        }
+
+        .tag-label::after {
+            content: " ]";
+            color: #3fb950;
+            font-weight: bold;
+        }
+
+        @keyframes pulsarCor {
+            0%   { background-color: #238636; box-shadow: 0 0 0px #3fb950; }
+            50%  { background-color: #2ea043; box-shadow: 0 0 16px #3fb950; }
+            100% { background-color: #238636; box-shadow: 0 0 0px #3fb950; }
+        }
+
+        @keyframes escala {
+            0%   { transform: scale(1); }
+            50%  { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+
+        .botao-animado {
+            display: inline-block;
+            background-color: #238636;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            font-family: 'Courier New', monospace;
+            border-radius: 6px;
+            cursor: pointer;
+            animation: pulsarCor 2.5s ease-in-out infinite;
+            transition: transform 0.15s;
+        }
+
+        
+        .botao-animado:hover {
+            animation: escala 0.4s ease-in-out forwards, pulsarCor 2.5s ease-in-out infinite;
+            background-color: #3fb950;
+        }
+
+        
+        .botao-animado::after {
+            content: " ✓";
+            font-size: 1.1em;
+        }
+
+        .destaque {
+            color: #d2a8ff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Questão 2 &mdash; Estrutura e Sintaxe do CSS</h1>
+
+    
+    <div class="caixa-exemplo">
+        <h2>O que é uma regra CSS?</h2>
+        <p>
+            Uma <strong>regra CSS</strong> é formada por três partes:
+        </p>
+        <ul>
+            <li>
+                <span class="destaque">Seletor</span>: indica qual(is) elemento(s) HTML será(ão)
+                estilizados. Exemplos: p, .classe, #id.
+            </li>
+            <li>
+                <span class="destaque">Propriedade</span>: o aspecto visual a ser alterado.
+                Exemplos: color, font-size, background-color.
+            </li>
+            <li>
+                <span class="destaque">Valor</span>: define como a propriedade se comporta.
+                Exemplos: red, 16px, #ffffff.
+            </li>
+        </ul>
+    </div>
+
+    
+    <div class="caixa-exemplo">
+        <h2>Pseudo-classe: :first-child e :hover</h2>
+        <p>
+            Uma <strong>pseudo-classe</strong> seleciona um elemento com base em seu
+            <em>estado</em> ou <em>posição</em> no DOM.
+            Abaixo, o primeiro item está destacado com :first-child,
+            e os links mudam de cor com :hover:
+        </p>
+        <ul class="lista-demo">
+            <li><a href="#">Primeiro item (destaque via :first-child)</a></li>
+            <li><a href="#">Segundo item (passe o mouse: :hover)</a></li>
+            <li><a href="#">Terceiro item (passe o mouse: :hover)</a></li>
+        </ul>
+    </div>
+
+    
+    <div class="caixa-exemplo">
+        <h2>Pseudo-elemento: :before e ::after</h2>
+        <p>
+            Um <strong>pseudo-elemento</strong> insere conteúdo <em>virtual</em> antes ou depois
+            de um elemento, sem alterar o HTML. Abaixo, os colchetes foram adicionados via CSS:
+        </p>
+        <p>
+            <span class="tag-label">HTML</span>
+            <span class="tag-label">CSS</span>
+            <span class="tag-label">JavaScript</span>
+        </p>
+    </div>
+
+    
+    <div class="caixa-exemplo">
+        <h2>Animação com @keyframes</h2>
+        <p>
+            O <strong>@keyframes</strong> define os estágios de uma animação. A propriedade
+            animation aplica essa animação ao elemento, controlando nome, duração,
+            tipo de progressão e repetição.
+        </p>
+        <p>O botão abaixo pulsa infinitamente e aumenta ao passar o mouse:</p>
+        <br>
+        <button class="botao-animado">Confirmar</button>
+    </div>
+
+</body>
+</html>
