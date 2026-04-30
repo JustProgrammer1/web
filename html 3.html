@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 3 - Bandeiras com CSS</title>
+    <style>
+        body {
+            background-color: #1b1b27fd;
+            color: #cdd6f4;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 48px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #89b4fa;
+            margin-bottom: 0;
+        }
+
+        .bandeira-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .bandeira-container h2 {
+            margin: 0;
+            font-size: 1rem;
+            color: #a6e3a1;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+    
+        .franca {
+            width: 300px;
+            height: 200px;
+            display: flex;
+            flex-direction: row;
+            border: 2px solid #45475a;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .franca .faixa {
+            flex: 1; 
+        }
+
+        .franca .azul   { background-color: #002395; }
+        .franca .branco { background-color: #ffffff; }
+        .franca .vermelho { background-color: #ED2939; }
+
+        
+        .alemanha {
+            width: 300px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #45475a;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .alemanha .faixa {
+            flex: 1;
+        }
+
+        .alemanha .preto   { background-color: #000000; }
+        .alemanha .vermelho { background-color: #DD0000; }
+        .alemanha .amarelo  { background-color: #FFCE00; }
+
+        
+        .japao {
+            width: 300px;
+            height: 200px;
+            background-color: #ffffff;
+            display: grid;
+            place-items: center; 
+            border: 2px solid #45475a;
+            border-radius: 4px;
+        }
+
+        .japao .circulo {
+            width: 100px;
+            height: 100px;
+            background-color: #BC002D;
+            border-radius: 50%; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BANDEIRA DA FRANÇA -->
+    <div class="bandeira-container">
+        <h2>🇫🇷 França</h2>
+        <div class="franca">
+            <div class="faixa azul"></div>
+            <div class="faixa branco"></div>
+            <div class="faixa vermelho"></div>
+        </div>
+    </div>
+
+    <!-- BANDEIRA DA ALEMANHA -->
+    <div class="bandeira-container">
+        <h2> Alemanha</h2>
+        <div class="alemanha">
+            <div class="faixa preto"></div>
+            <div class="faixa vermelho"></div>
+            <div class="faixa amarelo"></div>
+        </div>
+    </div>
+
+    <!-- BANDEIRA DO JAPÃO -->
+    <div class="bandeira-container">
+        <h2>🇯🇵 Japão</h2>
+        <div class="japao">
+            <div class="circulo"></div>
+        </div>
+    </div>
+
+</body>
+</html>
