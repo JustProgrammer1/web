@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>5a - Layout (Flexbox)</title>
+  <style>
+    /* ── Variáveis (aula 4 – unidades de medida e custom properties) ── */
+    :root {
+      --gap: 12px;
+      --padding: 24px;
+      --linha-topo: 86px;
+      --linha-rodape: 56px;
+      --radius: 6px;
+    }
+
+    /* ── Reset básico (aulas 1–3) ── */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background: #f3f3f5;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    /* ────────────────────────────────────────────────
+       FRAME PRINCIPAL
+       display: flex → ensinado nas aulas 9 e 10
+    ──────────────────────────────────────────────── */
+    .frame {
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+      padding: var(--padding);
+      box-sizing: border-box;       /* Box Model – aula 5 */
+
+      /* Flexbox – aula 9/10 */
+      display: flex;
+      flex-direction: row;
+      gap: var(--gap);
+    }
+
+    /* ── Estilo comum para todos os blocos coloridos ── */
+    .bloco {
+      border-radius: var(--radius);
+    }
+
+    /* ── Cores (aula 4) ── */
+    .laranja { background: #f5a623; }
+    .pessego { background: #f7c1b8; }
+    .ciano   { background: #dfeff0; }
+    .azul    { background: #c7d3f0; }
+    .verde   { background: #b8d67f; }
+    .ouro    { background: #f3a620; }
+
+
+    /* ════════════════════════════════════════════════
+       SEÇÃO ESQUERDA  (colunas 1 e 2 do layout original)
+    ════════════════════════════════════════════════ */
+    .sec-esquerda {
+      flex: 2;                    /* ocupa 2 partes do espaço disponível */
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+    }
+
+    /*
+     * Área que engloba as linhas 1 e 2:
+     *   - coluna da esquerda → laranja (topo) + azul (meio)
+     *   - coluna da direita  → pessego (span das duas linhas)
+     */
+    .linha-top-mid {
+      flex: 1;                    /* ocupa todo o espaço vertical restante */
+      display: flex;
+      flex-direction: row;
+      gap: var(--gap);
+    }
+
+    /* Coluna 1 interna: empilha laranja e azul */
+    .coluna-1 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+    }
+
+    /* Laranja: altura fixa (linha de topo) */
+    .laranja {
+      flex: 0 0 var(--linha-topo);
+    }
+
+    /* Azul: ocupa o espaço restante abaixo do laranja */
+    .azul {
+      flex: 1;
+    }
+
+    /* Pessego: ao lado da coluna-1, ocupa toda a altura de linha-top-mid */
+    .pessego {
+      flex: 1;
+    }
+
+    /* Barra ouro: altura fixa no rodapé da seção esquerda */
+    .ouro {
+      flex: 0 0 var(--linha-rodape);
+    }
+
+
+    /* ════════════════════════════════════════════════
+       SEÇÃO DIREITA  (colunas 3 e 4 do layout original)
+    ════════════════════════════════════════════════ */
+    .sec-direita {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+    }
+
+    /* Ciano: altura fixa no topo da seção direita */
+    .ciano {
+      flex: 0 0 var(--linha-topo);
+    }
+
+    /* Linha inferior: verde + coluna de bolinhas lado a lado */
+    .linha-mid-bot {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      gap: var(--gap);
+    }
+
+    /* Verde: ocupa o espaço horizontal restante */
+    .verde {
+      flex: 1;
+    }
+
+    /* Coluna de bolinhas (coluna 4 original) */
+    .col-dots {
+      flex: 0 0 var(--linha-rodape);  /* 56 px de largura */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    /* Bolinhas decorativas */
+    .bolinha {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;           /* border-radius – aula 4 */
+    }
+
+    .b1 { background: #f07f3a; }
+    .b2 { background: #e7a3a3; }
+    .b3 { background: #c7d28f; }
+    .b4 { background: #d7c3f2; }
+  </style>
+</head>
+<body>
+
+  <main class="frame">
+
+    <!-- ── Seção esquerda: colunas 1 e 2 ── -->
+    <section class="sec-esquerda">
+
+      <div class="linha-top-mid">
+        <!-- Coluna 1: laranja (topo fixo) + azul (cresce) -->
+        <div class="coluna-1">
+          <div class="bloco laranja"></div>
+          <div class="bloco azul"></div>
+        </div>
+
+        <!-- Pessego: ocupa toda a altura ao lado da coluna 1 -->
+        <div class="bloco pessego"></div>
+      </div>
+
+      <!-- Barra dourada no rodapé -->
+      <div class="bloco ouro"></div>
+
+    </section>
+
+
+    <!-- ── Seção direita: colunas 3 e 4 ── -->
+    <section class="sec-direita">
+
+      <!-- Ciano: topo fixo -->
+      <div class="bloco ciano"></div>
+
+      <!-- Verde + Bolinhas: crescem juntos abaixo do ciano -->
+      <div class="linha-mid-bot">
+        <div class="bloco verde"></div>
+
+        <div class="col-dots" aria-hidden="true">
+          <div class="bolinha b1"></div>
+          <div class="bolinha b2"></div>
+          <div class="bolinha b3"></div>
+          <div class="bolinha b4"></div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
