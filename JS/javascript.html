@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    html { height:100%; margin:0; }
+    body {
+        height: 100%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:#fff;
+    }
+
+    .Botao{
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-flex;
+        font-size: 30px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+    }
+</style>
+<body>
+    <button class= "Botao" onclick="alert('MENTIROSO')">Click me</button>
+
+
+
+<script>
+    alert('Alerta tag Script');
+    document.querySelector('button').innerHTML="Amanha é sábado"
+</script>
+<script src="javascript.js"></script>
+</body>
+</html>
